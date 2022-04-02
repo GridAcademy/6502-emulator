@@ -1,8 +1,10 @@
 # 6502 Architecture
 
-[http://archive.6502.org/books/mcs6500_family_hardware_manual.pdf](6502 Documentation)
+[6502 Documentation](http://archive.6502.org/books/mcs6500_family_hardware_manual.pdf)
 
-[https://www.westerndesigncenter.com/wdc/documentation/w65c02s.pdf](65C02 Documentation) - 65C02 is the static version of the 6502. This manual can be used, as long as the static features are not implemented
+[Programming the 65816](http://archive.6502.org/datasheets/wdc_65816_programming_manual.pdf)
+
+[65C02 Documentation](https://www.westerndesigncenter.com/wdc/documentation/w65c02s.pdf) - 65C02 is the static version of the 6502. This manual can be used, as long as the static features are not implemented
 
 ## State: Registers
 
