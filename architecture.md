@@ -12,8 +12,8 @@ A = Accumulator -> Stores result of most computations
 
 Y and X = Index Registers -> Stores a byte that might be needed later (ex: other computation)
 
-PCH (high) and PCL (low) = Program Counter (implemented as 2 registers) -> pointer into memory that keeps track of the instruction being executed -> 2 registers so that it can address a 16-bit address space (the 6502 has 16 address ports); high and low define which one is the high byte and which one is the low
+PCH (high) and PCL (low) = Program Counter (implemented as 2 registers) -> pointer into memory that keeps track of the instruction being executed (points to ROM) -> 2 registers so that it can address a 16-bit address space (the 6502 has 16 address ports); high and low define which one is the high byte and which one is the low
 
-S = Stack Pointer -> 8 bits + plus one bit at the beginning; pointer that indicates the top of the stack
+S = Stack Pointer -> 8 bits + plus one bit at the beginning; pointer that indicates the top of the stack (points to RAM); the data it points to refers to the state of the CPU before/after a function is executed, and after the execution it allows for the relevant state of the CPU to be restored
 
 P = Process Status Register -> Every time you do an instruction, you set the conditional bit according to it. Conditional bits are, in order: N (Negative; set to 1 indicates negative), V (Overflow; set to 1 indicates true), 1 (fixed), B (BRK command; set to 1 is BRK, set to 0 is IRQB), D (Decimal mode; set to 1 is true), I (IRQB disable; set to 1 is disable), Z (Zero; set to 1 is true), C (Carry; set to 1 is true) || P = [N V 1 B D I Z C]
