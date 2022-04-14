@@ -32,19 +32,20 @@ uint8_t *read_rom(char *filename){
 
 char *disassembler(uint8_t instruction){
 	switch (instruction) {
-		case 0x00: printf("NOP"); break;
-		case 0x18: printf("unimplemented instruction"); break;
-		case 0xc3: printf("JMP adr"); break;
-		case 0xc5: printf("PUSH B"); break;
-		case 0xd4: printf("CNC adr"); break;
-		case 0xf5: printf("PUSH PSW"); break;
+		case 0x00: printf("BRK s"); break;
+		case 0x18: printf("CLC i"); break;
+		case 0xc3: printf("unimplemented"); break;
+		case 0xc5: printf("CMP zp"); break;
+		case 0xd4: printf("unimplemented"); break;
+		case 0xf5: printf("SPC zp,x"); break;
 	}
 	printf("\n");
 }
 
 
 int main(){
-	uint8_t *buffer = read_rom("SpaceInvaders/invaders.h");
+	// TODO Add rom to read
+	uint8_t *buffer = read_rom("");
 	// Print out the first 10 instructions
 	for (int i = 0; i < 10; i++) {
 		printf("%x\n", buffer[i]);
