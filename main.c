@@ -28,7 +28,20 @@ bool get_bit(uint8_t *reg, int shift) {
 	return *reg & (0x01 << shift); // AND (bitwise)
 }
 
+/* ADC - Add With Carry:  Take value1 from accumulator, add value2 to value1, store result in accumulator
 
+Value 2 can be obtained in several different ways (depending on Opcode):
+- Immediate (69): constant(fixed) value, specified immediately after instruction
+
+Affects flags:
+- n: set if most significant bit of result is set; cleared otherwise - n is for negative, so think about two's complement
+- v: set if signed overflow; cleared if valid signed result
+- z: set if zero; cleared otherwise
+- c: set if unsigned overflow; cleared if valid unsigned result
+*/
+void add_with_carry(){
+
+}
 
 int main() {
 	uint8_t reg = 0xdf; //1101 1111
